@@ -78,18 +78,20 @@ Drishya solves these problems by leveraging **Web3 technology** and the **Ethere
 
   -**Setup & Integration:**
    -1.Create a VRF Subscription:
-     -[Go to the Chainlink VRF Subscription Manager](https://vrf.chain.link/)
-     -Connect your wallet and create new subscription.
+     -Go to the [Chainlink VRF Subscription Manager](https://vrf.chain.link/) and connect your wallet to create a new subscription.
 
-   -2.Fund the Subscription:  
-    -Add link tokens to your subscription.
+   -2.Fund the Subscription: 
+    -Add LINK tokens to your subscription.
 
-   -3.Add Your Contract as Consumer
+   -3.Add Your Contract as Consumer:
     -After deploying, add its address to VRF subscription as consumer.
    
    -4.Configure Contract Parameters
+    -Set the required VRF configuration values in your smart contract.
+
    -5.Deploy the Smart Contract:
-    -use your preferred environment(Hardhat, Foundry)
+    -Use your preferred environment(Hardhat, Foundry)
+
    -6.Trigger Meme Spotlight:
     -Call the required functions in your contract.
 
