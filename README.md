@@ -85,7 +85,7 @@ Drishya solves these problems by leveraging **Web3 technology** and the **Ethere
     -Add link tokens to your subscription.
 
    -3.Add Your Contract as Consumer
-    -After deploying, add its address to VRF     subscription as consumer.
+    -After deploying, add its address to VRF subscription as consumer.
    
    -4.Configure Contract Parameters
    -5.Deploy the Smart Contract:
