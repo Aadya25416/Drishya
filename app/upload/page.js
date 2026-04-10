@@ -19,6 +19,8 @@ import { useToast } from "@/hooks/use-toast"
 import Link from 'next/link'
 import { ProfileGate } from "@/components/ProfileGate"
 
+const SEPOLIA_EXPLORER_TX_BASE_URL = "https://sepolia.etherscan.io/tx"
+
 export default function UploadPage() {
   const { address, isConnected } = useAccount()
   const { toast } = useToast()
@@ -148,8 +150,7 @@ export default function UploadPage() {
               <CardDescription className="text-gray-400">Your movie is now live on the Drishya platform.</CardDescription>
             </CardHeader>
              <CardContent>
-              {/* MODIFIED: Updated to Somnia testnet explorer URL */}
-               <p className="text-sm text-gray-500">Transaction Hash: <a href={`https://shannon-explorer.somnia.network/tx/${hash}`} target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline break-all">{hash}</a></p>
+               <p className="text-sm text-gray-500">Transaction Hash: <a href={`${SEPOLIA_EXPLORER_TX_BASE_URL}/${hash}`} target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline break-all">{hash}</a></p>
              </CardContent>
             <CardFooter className="flex-col gap-2">
               <Button onClick={() => window.location.reload()} className="w-full bg-teal-500 hover:bg-teal-600 font-bold">Upload Another Movie</Button>
