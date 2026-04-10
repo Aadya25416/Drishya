@@ -50,10 +50,49 @@ Drishya solves these problems by leveraging **Web3 technology** and the **Ethere
   - Wallet-based identity (MetaMask, RainbowKit)
 
 - **New Feature: Meme Spotlight**
+  -The Meme Spotlight feature is a blockchain-based system that randomly selects a winning meme in a fair, transparent, and verifiable way using Chainlink VRF (Verifiable Random Function).
+
   - **User-Submitted Memes:** Viewers can upload relevant memes *free of cost* for community enjoyment.
   - **Random Selection:** The platform **admin** can trigger the **Spotlight of the Day** to randomly select a winning meme.
   - **Decentralized Randomness:** The selection process uses **Chainlink VRF (Verifiable Random Function)** for provably fair, tamper-proof randomness.
   - **Reward:** The creator of the selected meme wins a **20% discount** on their next film rental transaction.
+
+  -**HOW IT WORKS**
+   -**Request Randomness:**The smart contract sends a request to Chainlink VRF.
+   -**VRF Fulfillment:**Chainlink VRF generates a secure random number. It sends request back to smart contract via callback function.
+   -**Winner Selection:**Smart contract uses random number to select a meme from pool and declare it as spotlight winner.
+
+  -**Required Configuration:**
+    -**1.VRF Coordinator Address:** This is Chainlink  VRF contract address for your network.
+    -**2.Subscription ID:** It is created from Chainlink VRF to pay for randomness request.
+    -**3.Key Hash(gas lane):** Controls maximum gas price for requests.
+    -**4.Callback Gas Limit:**Maximum gas allowed for the VRF callback function.
+    -**5.Request Confirmations:**Number of block confirmations before VRF responds.
+
+  -**Official Documentation:**
+      For more details on setup and configuration, refer to the official Chainlink documentation
+      For more details:
+      - Learn how VRF works in the [official Chainlink VRF docs](https://docs.chain.link/vrf/v2-5/getting-started)
+      - Create and manage subscriptions using the [VRF Subscription Manager](https://vrf.chain.link/)
+      - See implementation examples in the [VRF examples guide](https://docs.chain.link/vrf/v1/examples/get-a-random-number)
+
+  -**Setup & Integration:**
+   -1.Create a VRF Subscription:
+     -[Go to the Chainlink VRF Subscription Manager](https://vrf.chain.link/)
+     -Connect your wallet and create new subscription.
+
+   -2.Fund the Subscription:  
+    -Add link tokens to your subscription.
+
+   -3.Add Your Contract as Consumer
+    -After deploying, add its address to VRF     subscription as consumer.
+   
+   -4.Configure Contract Parameters
+   -5.Deploy the Smart Contract:
+    -use your preferred environment(Hardhat, Foundry)
+   -6.Trigger Meme Spotlight:
+    -Call the required functions in your contract.
+
 
 - **Modern UI/UX**
   - Built with **Next.js**, **Tailwind CSS**, **Framer Motion**, **shadcn/ui**
